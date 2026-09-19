@@ -6,6 +6,7 @@ RUN uv sync --no-dev
 COPY app/ ./app/
 
 RUN groupadd -g 1000 appuser && useradd -u 1000 -g appuser -m appuser \
+    && mkdir -p /app/data \
     && chown -R appuser:appuser /app /home/appuser
 USER appuser
 

@@ -2,7 +2,7 @@ FROM python:3.12-slim
 WORKDIR /app
 RUN pip install uv
 COPY pyproject.toml .
-RUN uv sync --no-dev --frozen
+RUN uv sync --no-dev
 COPY app/ ./app/
 
 RUN groupadd -g 1000 appuser && useradd -u 1000 -g appuser -m appuser \

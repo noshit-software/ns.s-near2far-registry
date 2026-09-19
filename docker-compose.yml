@@ -1,0 +1,12 @@
+services:
+  registry:
+    build: .
+    ports:
+      - "127.0.0.1:5102:5102"
+    env_file: .env
+    volumes:
+      - registry_data:/app/data
+    restart: unless-stopped
+
+volumes:
+  registry_data:
